@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student List</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'studs/style.css' %}">            
+    </head>
+
+    <body>
+        <div class="navbar">
+            <div class="navbar-inner">
+                <a href="#" style="text-decoration: overline;">Students</a> . 
+                <a href="/admin">Add New</a>
+            </div>
+            <hr id="hline" width="95%">
+        </div>
+
+
+        <div style="display: flex;">
+            {% if latest_list %}
+                {% for student in latest_list %}
+                <div class="card">
+                    <a href="/{{student.id}}">
+                        <h1>{{ student.id}}</h1>
+                    </a>
+                    <p>
+                        {{student.name}} {{student.surname}}
+                    </p>
+                </div>
+                {% endfor %}
+
+            {% else %}
+                <p>No Students are available.</p> 
+            {% endif %}
+        </div>
+
+        <div>
+        	<h5 style="font-family: monospace;margin-left: 10%;">
+	        	*click Student id to view Details.
+	        </h5>
+        </div>
+        <div>
+            <hr id="hline" width="80%" style="margin-top: 5%;">
+            <div align="center"  style=" margin-bottom: 3%;">
+                <em>@ChrissDessy2019</em>
+                
+            </div>
+            <br>
+        </div>
+    </body>
+
+</html>

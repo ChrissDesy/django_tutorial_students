@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Student Details</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'studs/style.css' %}">            
+    </head>
+
+    <body>
+        <div style="display: table-caption; height: 10px;">
+            <a href="/">
+                <img alt="arrow" src="{% static 'studs/back.png' %}">
+                <label style="font-size: 11px;">back</label>
+            </a>
+        </div>
+
+        <div class="navbar">
+            <div class="navbar-inner">
+                <a href="#" style="text-decoration: overline;">Student</a> . 
+                <a href="/admin">Add New</a>
+            </div>
+            <hr id="hline" width="95%">
+        </div>
+
+
+        <div style="margin: 0% 20%;">
+            <div align="center" class="card">
+                <h1>{{data.id}}</h1>
+                <p>
+                    <em>Name:</em>   {{ data.name }} <br><br>
+                    <em>Surname:</em> {{ data.surname }}<br><br>
+                    <em>Age:</em>    {{ data.age }}<br><br>
+                    <em>Gender:</em> {{ data.gender }}<br><br>
+                    <em>Date Enrolled:</em> {{ data.saved_date }}<br><br>
+                </p>
+            </div>
+        </div>
+
+        <div>
+            <hr id="hline" width="80%" style="margin-top: 5%;">
+            <div align="center"  style=" margin-bottom: 3%;">
+                <em>@ChrissDessy2019 </em>
+                
+            </div>
+            <br>
+        </div>
+    </body>
+</html>
